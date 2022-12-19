@@ -1,6 +1,7 @@
 body {
     margin:  0;
     padding:  0;
+    height: 100vh;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -15,7 +16,7 @@ h1, p {
 
 /* controls */
 header {
-    padding: 8px 16px;
+    padding: 24px 18px;
 }
 
 nav {
@@ -28,4 +29,18 @@ nav {
 .nav-chat-icon,
 .nav-logo {
     height: 34px;
+}
+
+section{
+    padding: 0 8px;
+}
+
+.main-img-container {
+    height: 750px;
+}
+
+.main-img-container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
 }
