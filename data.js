@@ -1,4 +1,4 @@
-const dogs = [
+export const dogs = [
     {
         name: "Rex",
         avatar: "images/dog-rex.jpg",
@@ -6,7 +6,8 @@ const dogs = [
         bio: "Art. Literature. Natural wine. Yoga.",
         hasBeenSwiped: false,
         hasBeenLiked: false
-    },{
+    },
+    {
         name: "Bella",
         avatar: "images/dog-bella.jpg",
         age: 43,
