@@ -18,7 +18,7 @@ h2, p {
 
 /* controls */
 header {
-    padding: 24px 18px;
+    padding: 1.5em 1.125em;
 }
 
 nav,
@@ -39,7 +39,7 @@ nav {
 }
 
 section{
-    padding: 0 8px;
+    padding: 0 0.5em;
 }
 
 .main-content-container {
@@ -60,13 +60,13 @@ section{
 }
 
 .main-content h2 {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 600;
     color: #F8F8F8;
 }
 
 .main-content p {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 400;
     color: #B7B7B7;
 }
@@ -79,7 +79,7 @@ nav img,
 }
 
 .main-btns {
-    padding: 24px;
+    padding: 1.5em;
     gap: 24px;
 }
 
