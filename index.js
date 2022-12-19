@@ -1,6 +1,19 @@
 import Dog from "/Dog.js"
-import { dogs } from "/data.js"
+import { dogsData } from "/data.js"
 
 
-const dog = new Dog(dogs[0])
-console.log(dog)
+
+
+
+function getNextDog(){
+    const nextDog = dogsData.shift()
+    return new Dog(nextDog)
+}
+
+function render() {
+    document.getElementById("main-content-container").innerHTML = dog.getDogHtml()
+}
+
+const dog = getNextDog()
+render()
+
