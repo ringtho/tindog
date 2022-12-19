@@ -19,8 +19,13 @@ header {
     padding: 24px 18px;
 }
 
-nav {
+nav,
+.main-btns,
+.btn-container {
     display: flex;
+}
+
+nav {
     justify-content: space-between;
     gap: 10px;
 }
@@ -43,4 +48,42 @@ section{
     height: 100%;
     width: 100%;
     border-radius: 15px;
+}
+
+/* links */
+
+nav img,
+.btn-container {
+    cursor: pointer;
+}
+
+.main-btns {
+    padding: 24px;
+    gap: 24px;
+}
+
+.main-btns,
+.btn-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-container {
+    padding: 10px;
+    width: 91px;
+    height: 91px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px #E9E9EA;
+}
+
+.nope:hover,
+.nope:focus {
+    background-color: #FFE7EF;
+    box-shadow: 0 10px 20px #EDD9DF;
+}
+
+.like:hover,
+.like:focus {
+    background-color: #DBFFF4;
+    box-shadow: 0 10px 20px #CCF1E6;
 }
