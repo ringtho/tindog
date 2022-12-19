@@ -7,3 +7,25 @@ body {
 * {
     box-sizing: border-box;
 }
+
+/* typography */
+h1, p {
+    margin: 0;
+}
+
+/* controls */
+header {
+    padding: 8px 16px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.nav-profile-icon,
+.nav-chat-icon,
+.nav-logo {
+    height: 34px;
+}
