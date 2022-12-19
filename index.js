@@ -15,5 +15,5 @@ function render() {
 }
 
 const dog = getNextDog()
-render()
+// render()
 
