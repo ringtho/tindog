@@ -4,7 +4,13 @@ class Dog {
         Object.assign(this, data)
     }
 
-    
+    getLikeNopeDogHtml(action) {
+        return `
+        <div class="${action}-banner">
+            <img src="/images/badge-${action}.png" alt="${action}">
+        </div>
+        `
+    }
 
     getDogHtml(){
         const { name, avatar, age, bio } = this

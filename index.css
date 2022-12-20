@@ -109,12 +109,13 @@ nav img,
     box-shadow: 0 10px 20px #CCF1E6;
 }
 
-.like-banner {
+.like-banner,
+.nope-banner {
     position: absolute;
     width: 234px;
     height: 116px;
     top: 48px;
-    left: 16px;
+    left: 18px;
     rotate: -30deg;
-    display: none;
+    display: block;
 }

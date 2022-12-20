@@ -1,9 +1,18 @@
 import Dog from "/Dog.js"
 import { dogsData } from "/data.js"
+let mainContentContainer = document.getElementById("main-content-container")
 
 
 
+document.addEventListener('click', function(e){
+    if (e.target.dataset.action){
+        handleLikeNopeBtnClick(e.target.dataset.action)
+    }
+})
 
+function handleLikeNopeBtnClick(action){
+    mainContentContainer.innerHTML += dog.getLikeNopeDogHtml(action)
+}
 
 function getNextDog(){
     const nextDog = dogsData.shift()
@@ -11,9 +20,9 @@ function getNextDog(){
 }
 
 function render() {
-    document.getElementById("main-content-container").innerHTML = dog.getDogHtml()
+    mainContentContainer.innerHTML = dog.getDogHtml()
 }
 
 const dog = getNextDog()
-// render()
+render()
 
