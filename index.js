@@ -2,6 +2,8 @@ import Dog from "/Dog.js"
 import dogsData from "/data.js"
 import { getThankYouHtml } from "/utils.js"
 let mainContentContainer = document.getElementById("main-content-container")
+const likeBtn = document.getElementById("btn-like")
+const nopeBtn = document.getElementById("btn-nope")
 let count = 0
 
 
@@ -29,15 +31,22 @@ function handleLikeNopeBtnClick(action){
 }
 
 function handleBackBtnClick(){
+    // likeBtn.classList.remove("like-selected")
+    // nopeBtn.classList.remove("nope-selected")
     if (count >= 0){
         count--
         setTimeout(()=> {
             dog = getNextDog()
             render()
-            dog.hasBeenLiked ? 
-            mainContentContainer.innerHTML += dog.getLikeNopeDogHtml("like"):
-            mainContentContainer.innerHTML += dog.getLikeNopeDogHtml("nope")
-        }, 1500)
+            if (dog.hasBeenLiked){
+                mainContentContainer.innerHTML += dog.getLikeNopeDogHtml("like")
+                likeBtn.classList.add("like-selected")
+
+            } else {
+                mainContentContainer.innerHTML += dog.getLikeNopeDogHtml("nope")
+                nopeBtn.classList.add("nope-selected")
+            }
+        }, 1000)
     }
 }
 
@@ -52,6 +61,8 @@ function getNextDog(){
 }
 
 function render() {
+    likeBtn.classList.remove("like-selected")
+    nopeBtn.classList.remove("nope-selected")
     mainContentContainer.innerHTML = dog.getDogHtml()
 }
 

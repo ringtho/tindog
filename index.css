@@ -109,6 +109,22 @@ nav img,
     box-shadow: 0 10px 20px #CCF1E6;
 }
 
+.back:hover,
+.back:focus {
+    background-color: #DBFEFE;
+    box-shadow: 0 10px 20px #cfe7e7;
+}
+
+.like-selected {
+    background-color: #DBFFF4;
+    box-shadow: 0 10px 20px #CCF1E6;
+}
+
+.nope-selected {
+    background-color: #FFE7EF;
+    box-shadow: 0 10px 20px #EDD9DF;
+}
+
 .like-banner,
 .nope-banner {
     position: absolute;
