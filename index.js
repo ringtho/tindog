@@ -1,8 +1,10 @@
 import Dog from "/Dog.js"
-import { dogsData } from "/data.js"
+import dogsData from "/data.js"
+import { getThankYouHtml } from "/utils.js"
 let mainContentContainer = document.getElementById("main-content-container")
-
-
+let dogsArray = []
+let count = 0
+Object.assign(dogsArray, dogsData)
 
 document.addEventListener('click', function(e){
     if (e.target.dataset.action){
@@ -14,13 +16,17 @@ document.addEventListener('click', function(e){
 })
 
 function handleLikeNopeBtnClick(action){
+    count += 1
+    dog.hasBeenSwiped = true
     mainContentContainer.innerHTML += dog.getLikeNopeDogHtml(action)
-    console.log(action)
+    console.log(dog)
+    console.log(dogsArray)
+    
     setTimeout(()=> {
-        const newDog = getNextDog()
-        action === 'like' ? newDog.hasBeenLiked = true : ""
-        
-        render(newDog)
+        const dog = getNextDog()
+        console.log(dog)
+        action === 'like' ? dog.hasBeenLiked = true : ""
+        render(dog)
     }, 1500)
     
 }
@@ -29,28 +35,16 @@ function handleRefreshBtnClick(){
     document.location.reload()
 }
 
-function thankYou() {
-    return `
-    <div class="thanks">
-        <h2>Thank you for visiting TinDog!</h2>
-        <div class="btn-container like">
-        <img class="refresh-icon" id="refresh" src="/images/refresh.png" alt="refresh">
-        </div>
-    </div>
-    `
-}
-
 function getNextDog(){
-    const nextDog = dogsData.shift()
-    console.log(nextDog)
+    const nextDog = dogsArray[count]
     return nextDog ? new Dog(nextDog) : 
-    document.getElementById('main').innerHTML = thankYou()
+    document.getElementById('main').innerHTML = getThankYouHtml()
 }
 
-function render(dog) {
-    mainContentContainer.innerHTML = dog.getDogHtml()
+function render(animal) {
+    mainContentContainer.innerHTML = animal.getDogHtml()
 }
 
-const dog = getNextDog()
+let dog = getNextDog()
 render(dog)
 
