@@ -12,17 +12,23 @@ document.addEventListener('click', function(e){
 
 function handleLikeNopeBtnClick(action){
     mainContentContainer.innerHTML += dog.getLikeNopeDogHtml(action)
+    setTimeout(()=> {
+        const newDog = getNextDog()
+        render(newDog)
+    }, 1500)
+    
 }
 
 function getNextDog(){
     const nextDog = dogsData.shift()
-    return new Dog(nextDog)
+    console.log(nextDog)
+    return nextDog ? new Dog(nextDog) : console.log("No more Dogs")
 }
 
-function render() {
+function render(dog) {
     mainContentContainer.innerHTML = dog.getDogHtml()
 }
 
 const dog = getNextDog()
-render()
+render(dog)
 
