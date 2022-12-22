@@ -2,9 +2,8 @@ import Dog from "/Dog.js"
 import dogsData from "/data.js"
 import { getThankYouHtml } from "/utils.js"
 let mainContentContainer = document.getElementById("main-content-container")
-let dogsArray = []
 let count = 0
-Object.assign(dogsArray, dogsData)
+
 
 document.addEventListener('click', function(e){
     if (e.target.dataset.action){
@@ -16,19 +15,15 @@ document.addEventListener('click', function(e){
 })
 
 function handleLikeNopeBtnClick(action){
-    count += 1
-    dog.hasBeenSwiped = true
+    dogsData[count].hasBeenSwiped = true
+    action === 'like' ? dogsData[count].hasBeenLiked = true : ""
+    count += 1 
     mainContentContainer.innerHTML += dog.getLikeNopeDogHtml(action)
-    console.log(dog)
-    console.log(dogsArray)
-    
     setTimeout(()=> {
-        const dog = getNextDog()
-        console.log(dog)
-        action === 'like' ? dog.hasBeenLiked = true : ""
-        render(dog)
+        dog = getNextDog()
+        render()
     }, 1500)
-    
+    console.log(dogsData)
 }
 
 function handleRefreshBtnClick(){
@@ -36,15 +31,15 @@ function handleRefreshBtnClick(){
 }
 
 function getNextDog(){
-    const nextDog = dogsArray[count]
+    const nextDog = dogsData[count]
     return nextDog ? new Dog(nextDog) : 
     document.getElementById('main').innerHTML = getThankYouHtml()
 }
 
-function render(animal) {
-    mainContentContainer.innerHTML = animal.getDogHtml()
+function render() {
+    mainContentContainer.innerHTML = dog.getDogHtml()
 }
 
 let dog = getNextDog()
-render(dog)
+render()
 
