@@ -31,8 +31,6 @@ function handleLikeNopeBtnClick(action){
 }
 
 function handleBackBtnClick(){
-    // likeBtn.classList.remove("like-selected")
-    // nopeBtn.classList.remove("nope-selected")
     if (count >= 0){
         count--
         setTimeout(()=> {
