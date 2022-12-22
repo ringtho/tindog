@@ -9,6 +9,9 @@ document.addEventListener('click', function(e){
     if (e.target.dataset.action){
         handleLikeNopeBtnClick(e.target.dataset.action)
     }
+    if(e.target.id === "btn-back"){
+        handleBackBtnClick()
+    }
     if(e.target.id === "refresh"){
         handleRefreshBtnClick()
     }
@@ -17,13 +20,25 @@ document.addEventListener('click', function(e){
 function handleLikeNopeBtnClick(action){
     dogsData[count].hasBeenSwiped = true
     action === 'like' ? dogsData[count].hasBeenLiked = true : ""
-    count += 1 
+    count++ 
     mainContentContainer.innerHTML += dog.getLikeNopeDogHtml(action)
     setTimeout(()=> {
         dog = getNextDog()
         render()
     }, 1500)
-    console.log(dogsData)
+}
+
+function handleBackBtnClick(){
+    if (count >= 0){
+        count--
+        setTimeout(()=> {
+            dog = getNextDog()
+            render()
+            dog.hasBeenLiked ? 
+            mainContentContainer.innerHTML += dog.getLikeNopeDogHtml("like"):
+            mainContentContainer.innerHTML += dog.getLikeNopeDogHtml("nope")
+        }, 1500)
+    }
 }
 
 function handleRefreshBtnClick(){
