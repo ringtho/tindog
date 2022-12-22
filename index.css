@@ -119,3 +119,18 @@ nav img,
     rotate: -30deg;
     display: block;
 }
+
+.thanks {
+    width: 90%;
+    padding: 1em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.thanks div {
+    margin: 10% auto;
+}
+
+.refresh-icon {
+    width: 100%;
+}
