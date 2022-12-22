@@ -137,7 +137,7 @@ nav img,
 }
 
 .thanks {
-    width: 90%;
+    width: 80%;
     padding: 1em;
     margin: 0 auto;
     text-align: center;
@@ -149,4 +149,18 @@ nav img,
 
 .refresh-icon {
     width: 100%;
+}
+
+.gif {
+    width: 100%;
+    border:  1px solid red;
+}
+
+.gif iframe {
+    width: 100%;
+}
+
+.disable {
+    opacity: 0.5;
+
 }
