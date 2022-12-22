@@ -162,5 +162,13 @@ nav img,
 
 .disable {
     opacity: 0.5;
-
+    cursor: not-allowed;
 }
+
+.disable:hover,
+.disable:focus {
+    background-color: #FFF;
+    box-shadow: 0 10px 20px #E9E9EA;
+}
+
+
